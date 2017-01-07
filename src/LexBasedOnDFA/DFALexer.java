@@ -72,7 +72,7 @@ public class DFALexer {
                     else if(peek == '=') state = 4;
                     else if(peek == '<') state = 6;
                     else if(peek == '>') state = 8;
-                    //else error();
+                    else error();
                     break;
                 case 1://在某一状态无法继续跳转，可以返回时，若达到输入末尾，直接返回值，否则返回值并且将pos回退一位
                     peek = nextChar();

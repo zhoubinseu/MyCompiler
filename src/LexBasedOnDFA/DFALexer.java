@@ -58,7 +58,7 @@ public class DFALexer {
 
         while (true){
             switch (state){
-                case 0://状态0不会直接读到末尾
+                case 0:
                     peek = nextChar();
                     if(Character.isDigit(peek)){
                         numValue = numValue*10 + Character.digit(peek, 10);
@@ -72,6 +72,7 @@ public class DFALexer {
                     else if(peek == '=') state = 4;
                     else if(peek == '<') state = 6;
                     else if(peek == '>') state = 8;
+                    else if(peek == (char)-1) return null;//若无此行，输入以空格结尾时程序出错
                     else error();
                     break;
                 case 1://在某一状态无法继续跳转，可以返回时，若达到输入末尾，直接返回值，否则返回值并且将pos回退一位

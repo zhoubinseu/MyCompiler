@@ -14,12 +14,18 @@ public class test {
         //调用Lexer中的scan()，识别下一个token
         Lexer lexer = new Lexer();
         while(Input.pos<Input.string.length()){
-            tokens.add(lexer.scan());
+            Token token = lexer.scan();
+            if(token != null){
+                tokens.add(token);
+            }
         }
         //输出词法单元序列
-        for(int i = 0; i < tokens.size();i++){
-            System.out.println(tokens.get(i));
+        if(tokens.size() == 0){
+            System.out.println("Invalid input");
+        }else {
+            for(int i = 0; i < tokens.size();i++){
+                System.out.println(tokens.get(i));
+            }
         }
-
     }
 }

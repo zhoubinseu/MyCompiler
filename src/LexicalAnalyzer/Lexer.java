@@ -31,6 +31,10 @@ public class Lexer {
                 break;
             }
         }
+        //解决输入以空格结尾时程序出错的问题
+        if(Input.pos == Input.string.length()){
+            return null;
+        }
         //识别操作符
         switch(peek){
             case '+':

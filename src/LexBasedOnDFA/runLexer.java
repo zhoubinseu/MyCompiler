@@ -12,11 +12,19 @@ public class runLexer {
         System.out.println(LexInput.string);
         DFALexer dfaLexer = new DFALexer();
         while (LexInput.pos<LexInput.string.length()){
-            tokens.add(dfaLexer.scan());
+            DFAToken token = dfaLexer.scan();
+            if(token!=null){
+                tokens.add(token);
+            }
         }
 
-        for(int i=0;i<tokens.size();i++){
-            System.out.println(tokens.get(i));
+        //输出词法单元序列
+        if(tokens.size() == 0){
+            System.out.println("Invalid input");
+        }else {
+            for(int i = 0; i < tokens.size();i++){
+                System.out.println(tokens.get(i));
+            }
         }
 
     }

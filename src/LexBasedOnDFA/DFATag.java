@@ -10,5 +10,8 @@ public class DFATag {
         NUM = 256, ID = 257,
         IF = 258, ELSE = 259,
         ASSIGN = 260, ADD = 261,
-        RELOP = 262;
+        RELOP = 262,
+        S = 263, A = 264,
+        B = 265, F = 266,
+        P = 267, END = 268;
 }

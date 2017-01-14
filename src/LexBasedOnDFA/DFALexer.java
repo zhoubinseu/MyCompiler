@@ -128,33 +128,33 @@ public class DFALexer {
                     }
                     break;
                 case 5:
-                    return new DFAOperator(DFATag.EQ, "==");
+                    return new DFAOperator(DFATag.RELOP, "==");
                 case 6:
                     peek = nextChar();
                     if(peek == '=') state = 7;
                     else if(peek == (char)-1){
-                        return new DFAOperator(DFATag.LT, "<");
+                        return new DFAOperator(DFATag.RELOP, "<");
                     }
                     else {
                         LexInput.pos--;
-                        return new DFAOperator(DFATag.LT, "<");
+                        return new DFAOperator(DFATag.RELOP, "<");
                     }
                     break;
                 case 7:
-                    return new DFAOperator(DFATag.LE,"<=");
+                    return new DFAOperator(DFATag.RELOP,"<=");
                 case 8:
                     peek = nextChar();
                     if(peek == '=') state = 9;
                     else if(peek == (char)-1){
-                        return new DFAOperator(DFATag.GT,">");
+                        return new DFAOperator(DFATag.RELOP,">");
                     }
                     else {
                         LexInput.pos--;
-                        return new DFAOperator(DFATag.GT, ">");
+                        return new DFAOperator(DFATag.RELOP, ">");
                     }
                     break;
                 case 9:
-                    return new DFAOperator(DFATag.GE, ">=");
+                    return new DFAOperator(DFATag.RELOP, ">=");
             }
         }
     }

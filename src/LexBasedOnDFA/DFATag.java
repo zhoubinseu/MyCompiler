@@ -9,8 +9,6 @@ public class DFATag {
     public final static int
         NUM = 256, ID = 257,
         IF = 258, ELSE = 259,
-        ASSIGN = 260, EQ = 261,
-        LT = 262, LE = 263,
-        GT = 264, GE = 265,
-        ADD = 266;
+        ASSIGN = 260, ADD = 261,
+        RELOP = 262;
 }

@@ -81,13 +81,12 @@ public class Parser {
         DFAToken X = stack.peek();
 
         while (X.tag != DFATag.END){
+            if(ip>=tokens.size()){
+                error();
+            }
             if(X.tag == tokens.get(ip).tag){
                 stack.pop();
                 ip++;
-            }
-            else if(parseTable.get(X.tag+""+tokens.get(ip).tag) == null){
-                System.out.println("nnnnnnn");
-                System.exit(-1);
             }
             else if(parseTable.get(X.tag+""+tokens.get(ip).tag) != null){
                 CFG cfg = (CFG)parseTable.get(X.tag+""+tokens.get(ip).tag) ;

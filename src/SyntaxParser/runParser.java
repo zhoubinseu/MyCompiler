@@ -11,6 +11,7 @@ import java.util.ArrayList;
  */
 public class runParser {
     public static void main(String[] args){
+        //先执行词法分析
         ArrayList<DFAToken> tokens = new ArrayList<>();
         LexInput.userInput();
         System.out.println(LexInput.string);
@@ -24,13 +25,14 @@ public class runParser {
         //输出词法单元序列
         if(tokens.size() == 0){
             System.out.println("Invalid input");
-        }else {
-            System.out.println("tokens:-----------------------");
+        }else {//输出token序列
+            System.out.println("------------tokens------------");
             for(int i = 0; i < tokens.size();i++){
                 System.out.println(tokens.get(i));
             }
         }
-        System.out.println("top-down:-----------------------");
+        //输出自上而下的递推序列
+        System.out.println("------------top-down derivations------------");
         Parser parser = new Parser();
         parser.parse(tokens);
 

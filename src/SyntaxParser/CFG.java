@@ -1,6 +1,7 @@
 package SyntaxParser;
 
 /**
+ * 上下文无关文法的产生式类
  * Created by zhoubin on 2017/1/14.
  */
 public class CFG {
